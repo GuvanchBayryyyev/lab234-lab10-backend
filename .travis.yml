@@ -4,6 +4,7 @@ before_install:
 - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-'uname -s'-'uname -m' > docker-compose
 - chmod +x docker-compose
 - sudo mv docker-compose /usr/local/bin
+- docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 install:
 - mvn install -Dmaven.javadoc.skip=true -B -V
 - ls -l
@@ -13,8 +14,6 @@ install:
 
 script:
 - docker-compose -H "$DOCKER_HOST" up -d
-after_success:
- docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
 cache:
  directories:
  - "$HOME/.m2"
