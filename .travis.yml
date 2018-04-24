@@ -4,7 +4,7 @@ before_install:
 - curl -L https://github.com/docker/compose/releases/download/1.20.1/docker-compose-'uname -s'-'uname -m' > docker-compose
 - chmod +x docker-compose
 - sudo mv docker-compose /usr/local/bin
-- docker login --username "$DOCKER_USERNAME" --password-stdin "$DOCKER_PASSWORD"
+- docker login --username "$DOCKER_USERNAME" --password-stdin. "$DOCKER_PASSWORD"
 install:
 - mvn install -Dmaven.javadoc.skip=true -B -V
 - ls -l
