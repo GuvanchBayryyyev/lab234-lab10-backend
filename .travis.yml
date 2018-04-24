@@ -9,8 +9,8 @@ install:
 - mvn install -Dmaven.javadoc.skip=true -B -V
 - ls -l
 - docker build --build-arg JAR_FILE=/target/myFile.jar -t $DOCKER_USERNAME/se234-lab10-backend .
-- docker push guvanch/se234-lab10-backend
-- docker pull guvanch/se234-lab10-client
+- docker push $DOCKER_USERNAME/se234-lab10-backend
+- docker pull $DOCKER_USERNAME/se234-lab10-client
 
 script:
 - docker-compose -H "$DOCKER_HOST" up -d
