@@ -85,3 +85,8 @@ libCheck.py
 #logfile
 
 ky-logs/**
+/bin/
+/Libs/
+/.settings/
+/.classpath
+.svn/
