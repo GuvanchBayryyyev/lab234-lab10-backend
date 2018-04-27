@@ -18,4 +18,25 @@ public class GradeServiceImpl implements GradeService {
             return "F";
 
     }
+    public Object paramsForTestGetGradeParams() {
+    	return new Object[][] {
+    		{100,"A"},
+    		{77,"B"}
+    	};
+    }
+    public String getGrade(double midtermScore, double finalScore) {
+     double total = midtermScore+finalScore;
+     if(total>80)
+    	 return "A";
+     if(total>70)
+    	 return "B";
+     if(total>60)
+    	 return "C";
+     if(total>50)
+    	 return "D";
+     if(total<50)
+    	 return "F";
+    return "F";
+    
+    }
 }
